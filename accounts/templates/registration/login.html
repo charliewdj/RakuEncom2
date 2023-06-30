@@ -1,0 +1,48 @@
+{% extends 'base2.html' %}
+{% load bootstrap4 %}
+{% block body %}
+  
+
+	 <section>
+			<div id="page-wrapper" class="sign-in-wrapper">
+				<div class="graphs">
+					<div class="sign-in-form">
+						<div class="sign-in-form-top">
+							<h1>ログイン</h1>
+						</div>
+						<div class="signin">
+							<div class="signin-rit">
+								<span class="checkbox1">
+									 <label class="checkbox"><input type="checkbox" name="checkbox" checked="">パスワードを忘れた?</label>
+								</span>
+								<p><a href="https://rakuencom.onrender.com/accounts/password_reset">こちらをクリック</a> </p>
+								<div class="clearfix"> </div>
+							</div>
+
+                        
+
+                        <form method="post" class="form">
+                            {% csrf_token %}
+                            {% bootstrap_form form %}
+                            {% buttons %}
+                                <input type="submit" class="btn btn-primary" value="ログイン">
+                            {% endbuttons %}
+                        </form>
+
+						</div>
+						<div class="new_people">
+							<h2>初めての方へ</h2>
+							<p>アカウントを作成しませんか</p>
+							<a href="https://rakuencom.onrender.com/accounts/register">ユーザー登録</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		<!--footer section start-->
+			<footer class="diff">
+			   <p class="text-center"> © 2023 Charlie Widjaja<a href="#" target="_blank"></a></p>
+			</footer>
+        <!--footer section end-->
+	</section>
+
+    {% endblock body %}
